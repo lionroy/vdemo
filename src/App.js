@@ -5,7 +5,17 @@ import './App.css';
 import styled from 'styled-components';
 
 
-const Button = styled.button``;
+const Button = styled.button`
+display: inline-block;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  background: transparent;
+  color: green;
+  border: white;
+  border-bottom: 2px solid green;
+  `;
 
 class App extends Component {
   render() {
@@ -16,7 +26,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started <button placeholder="OK!"/>
+          To get started <Button label="OK!">OK!</Button>
           edit <code>src/App.js</code> and save to reload.
         </p>
       </div>
