@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
-import "./App.css";
 
-import styled, { keyframes, ThemeProvider } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Outer = styled.div`
   text-align: center;
@@ -26,7 +25,7 @@ const Header = styled.div`
   color: royalblue;
 
   > h2 {
-    ${props => props.theme.upstyle && "text-transform: uppercase"};
+    ${props => props.theme.uppercase && "text-transform: uppercase"};
     color: purple;
   }
 `;
@@ -52,18 +51,12 @@ class App extends Component {
   render() {
     return (
       <Outer>
-        <ThemeProvider
-          theme={{
-            upstyle: true
-          }}
-          >
-          <Header>
-            <Logo src={logo} alt="logo" />
-            <Title>
-              <h2>Get Ready To React</h2>
-            </Title>
-          </Header>
-        </ThemeProvider>
+        <Header>
+          <Logo src={logo} alt="logo" />
+          <Title>
+            <h2>Get Ready To React</h2>
+          </Title>
+        </Header>
         <Intro>
           To get started say{" "}
           <Button primary label="OK!">
