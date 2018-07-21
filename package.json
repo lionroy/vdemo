@@ -2,13 +2,18 @@
   "name": "vdemo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lionroy.github.io/vdemo/",
+  "homepage": "https://lionroy.github.io/vdemo",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0",
+    "@fortawesome/react-fontawesome": "^0.1.0",
     "gh-pages": "^1.2.0",
+    "material-ui": "^0.20.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",
-    "styled-components": "^3.3.3"
+    "styled-components": "^3.3.3",
+    "yarn": "^1.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -17,5 +22,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }
