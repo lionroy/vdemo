@@ -25,11 +25,11 @@ const Logo = styled.img`
 `;
 
 const Header = styled.div`
-  background-color: gold;
+  background-color: goldenrod;
   height: 4erm;
   padding: 1erm;
   padding-bottom: 1em;
-  color: purple;
+  color: white;
 
   > h2 {
     ${props => props.theme.uppercase && "text-transform: uppercase"};
@@ -40,8 +40,8 @@ const Title = styled.div`
   font-size: 1.5em;
 `;
 const Main = styled.div`
+  align: center
   font-size: 1.2em;
-  border-radius: 9px
   padding: 0.5rem 0
   margin: 0.5rem 1rem
   width: 75%
@@ -52,13 +52,13 @@ const Main = styled.div`
 `;
 const Capsule = styled.div`
   font-size: 1.2em;
-  border-radius: 9px
-  padding: 0.5rem 0
+  border-radius: 5px
+  padding: 0.5rem 
   margin: 0.5rem 1rem
   align: center
   width: 75%
   background: #CCC
-  color: darkblue
+  color: lightgreen
   border: white
   border-top: 2px solid lightgrey
   border-bottom: 2px solid grey
