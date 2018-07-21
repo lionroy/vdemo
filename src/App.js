@@ -25,7 +25,7 @@ const Logo = styled.img`
 `;
 
 const Header = styled.div`
-  background-color: goldenrod;
+  background-color: black;
   height: 4erm;
   padding: 1erm;
   padding-bottom: 1em;
@@ -33,11 +33,15 @@ const Header = styled.div`
 
   > h2 {
     ${props => props.theme.uppercase && "text-transform: uppercase"};
+    ${props => props.theme.fonts && "font-family: 'Playfair Display SC', serif"};
     color: purple;
+    font-family: 'Playfair Display SC', serif;
   }
 `;
 const Title = styled.div`
   font-size: 1.5em;
+  font-family: 'Jura', sans-serif;
+
 `;
 const Main = styled.div`
   align: center
