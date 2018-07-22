@@ -5,13 +5,15 @@ import styled, { css, keyframes } from "styled-components";
 
 // fa- fonts lib
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEnvelope, faKey, faHome, faAndroid, faAt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // returns in ea page
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // line should exist in each page
+import { faEnvelope, faKey, faHome, faAndroid, faAt } from "@fortawesome/free-solid-svg-icons"; // icons exist this page
 
 library.add(faEnvelope, faKey, faHome, faAt); //fa envelope
 
 const Outer = styled.div`
   text-align: center;
+  width: 80%;
+  margin: auto;
 `;
 
 const spin = keyframes`
@@ -21,22 +23,22 @@ to { transform: rotate(360deg); }
 
 const Logo = styled.img`
   animation: ${spin} infinite 20s linear;
-  height: 50px;
+  height: 42px;
 `;
 
 const Header = styled.div`
   text-align: left;
   background-color: black;
-  height: 4erm;
-  padding-left: 2em;
-  padding-top: 1em;
+  text-decoration: strong;
+  height: 5erm;
+  padding: 1em 2em 2em 3em;
   color: white;
   font-family: 'Roboto Condensed', serif;
 
   > h2 {
     font-family: 'Roboto Slab', serif;
     ${props => props.theme.uppercase && "text-transform: uppercase"};
-    ${props => props.theme.font && "font-family: 'Roboto Slab', serif"};
+    ${props => props.theme.font && "font-family: 'Acme', serif"};
     color: purple;
   }
 `;
@@ -56,9 +58,10 @@ const FooterContent = styled.div`
   }
 `;
 const Title = styled.div`
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-family: 'Roboto Condensed', sans-serif;
-
+  float: right;
+  padding-bottom: 0.2em;
 `;
 const MainContent = styled.section`
   align: center
@@ -66,7 +69,6 @@ const MainContent = styled.section`
   width: 100%
   background: lightblue
   color: darkblue
-  border: white
   border-top: 2px solid white
   border-bottom: 2px solid black
   font-family: 'Roboto'
@@ -92,7 +94,8 @@ const Label = styled.p`
   font-family: 'Lato';
 `;
 const Button = styled.button`
-display: inline-block
+  cursor: pointer;
+  display: inline-block
   border-radius: 3px
   padding: 0.5rem
   margin: 0.5rem
@@ -101,12 +104,15 @@ display: inline-block
   color: purple
   border: 2px solid cornflowerblue  
   
-  ${props =>
-    props.primary &&
-    css`
+  ${props => props.primary && css`
   background: purple
   color: #EFE8D2 
   border: 2px solid purple
+`}
+  ${props => props.alert && css`
+  background: orangered
+  color: black 
+  border: 2px solid orangered
 `}
   `;
 
@@ -148,8 +154,30 @@ class App extends Component {
           Capsule content
         </Capsule>
           <EqualDivider vertical>
+            <Child>
+            <EqualDivider>
+            <Child>
+              <Label>Label</Label>
+              <Label>Label</Label>
+              <Label>Label</Label>
+              <Label>Label</Label>
+            </Child>
+            <Child>
+              <Button>Button</Button>
+              <Button primary>Primary</Button>
+              <Button alert>Alert</Button>
+              <Button>Info</Button>
+            </Child>
+            <Child><Capsule>Encapsulated</Capsule></Child>
+            <Child>Fourth</Child>
+          </EqualDivider>
+            </Child>
+            <Child>Second
+            <EqualDivider>
             <Child>First</Child>
             <Child>Second</Child>
+          </EqualDivider>
+            </Child>
             <Child>Third</Child>
           </EqualDivider>
           </MainContent>
