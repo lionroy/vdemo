@@ -6,7 +6,7 @@ import styled, { css, keyframes } from "styled-components";
 // fa- fonts lib
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // line should exist in each page
-import { faEnvelope, faKey, faHome, faAndroid, faAt } from "@fortawesome/free-solid-svg-icons"; // icons exist this page
+import { faEnvelope, faKey, faHome, faAt } from "@fortawesome/free-solid-svg-icons"; // icons exist this page
 
 library.add(faEnvelope, faKey, faHome, faAt); //fa envelope
 
