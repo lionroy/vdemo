@@ -5,10 +5,10 @@ import styled, { css, keyframes } from "styled-components";
 
 // fa- fonts lib
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEnvelope, faKey, faHome } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faKey, faHome, faAndroid, faAt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // returns in ea page
 
-library.add(faEnvelope, faKey, faHome); //fa envelope
+library.add(faEnvelope, faKey, faHome, faAt); //fa envelope
 
 const Outer = styled.div`
   text-align: center;
@@ -25,11 +25,27 @@ const Logo = styled.img`
 `;
 
 const Header = styled.div`
+  text-align: left;
   background-color: black;
+  height: 4erm;
+  padding-left: 2em;
+  padding-top: 1em;
+  color: white;
+  font-family: 'Roboto Condensed', serif;
+
+  > h2 {
+    font-family: 'Roboto Slab', serif;
+    ${props => props.theme.uppercase && "text-transform: uppercase"};
+    ${props => props.theme.font && "font-family: 'Roboto Slab', serif"};
+    color: purple;
+  }
+`;
+const FooterContent = styled.div`
+  background-color: indigo;
   height: 4erm;
   padding: 1erm;
   padding-bottom: 1em;
-  color: white;
+  color: beige;
   font-family: 'Roboto Condensed', serif;
 
   > h2 {
@@ -44,35 +60,32 @@ const Title = styled.div`
   font-family: 'Roboto Condensed', sans-serif;
 
 `;
-const Main = styled.div`
+const MainContent = styled.section`
   align: center
   font-size: 1.2em;
-  padding: 0.5rem 0
-  margin: 0.5rem 1rem
-  width: 75%
+  width: 100%
   background: lightblue
   color: darkblue
   border: white
-  border-top: 2px solid black
-  font-family: 'Roboto';
+  border-top: 2px solid white
+  border-bottom: 2px solid black
+  font-family: 'Roboto'
 `;
-const Capsule = styled.div`
-  font-size: 1.2em;
+const Capsule = styled.div`  
+  height: 3em
   border-radius: 5px
-  padding: 0.5rem 
   margin: 0.5rem 1rem
-  align: center
-  width: 75%
+  padding: 0.5rem 1rem
+  align: left
   background: #CCC
-  color: lightgreen
-  border: white
   border-top: 2px solid lightgrey
   border-bottom: 2px solid grey
 `;
 const Intro = styled.p`
-  font-size: large;
-  font-family: 'Roboto Mono';
-
+  font-size: large
+  font-family: 'Roboto Mono'
+  background: #750
+  color: cornflowerblue
 `;
 const Label = styled.p`
   font-size: normal;
@@ -81,8 +94,8 @@ const Label = styled.p`
 const Button = styled.button`
 display: inline-block
   border-radius: 3px
-  padding: 0.5rem 0
-  margin: 0.5rem 1rem
+  padding: 0.5rem
+  margin: 0.5rem
   width: 11rem
   background: #cornflowerblue
   color: purple
@@ -101,7 +114,7 @@ const EqualDivider = styled.div`
   display: flex;
   margin: 0.5rem;
   padding: 1rem;
-  background: papayawhip;
+  background: #ccc;
   ${props => props.vertical && "flex-direction: column;"} > * {
     flex: 1;
 
@@ -113,7 +126,7 @@ const EqualDivider = styled.div`
 
 const Child = styled.div`
   padding: 0.25rem 0.5rem;
-  background: palevioletred;
+  background: #aaa;
 `;
 
 class App extends Component {
@@ -126,32 +139,30 @@ class App extends Component {
             <h2>Ready To React</h2>
           </Title>
         </Header>
+        <MainContent>
         <Intro>
-          <FontAwesomeIcon icon="home" /> VDemo | React Page. Bottom UP. Here goes. Stay tuned for more Jazz
+          <FontAwesomeIcon icon="at" /> 
+          VDemo | React Page. Bottom UP. Here goes. Stay tuned for more Jazz
         </Intro>
         <Capsule>
-          <Button primary label="Login">
-            <Label>
-              <FontAwesomeIcon icon="key" /> Login
-            </Label>
-          </Button>
-          <Button label="Contact">
-            <Label>
-              <FontAwesomeIcon icon="envelope" /> Contact Us
-            </Label>
-          </Button>
+          Capsule content
         </Capsule>
-          <EqualDivider>
-            <Child>First</Child>
-            <Child>Second</Child>
-            <Child>Third</Child>
-          </EqualDivider>
           <EqualDivider vertical>
             <Child>First</Child>
             <Child>Second</Child>
             <Child>Third</Child>
           </EqualDivider>
-        <Main />
+          </MainContent>
+          <FooterContent>
+          -- Footer
+          <EqualDivider>
+            <Child>First</Child>
+            <Child>Second</Child>
+            <Child>Third</Child>
+            <Child>Fourth</Child>
+          </EqualDivider>
+
+          </FooterContent>
       </Outer>
     );
   }
