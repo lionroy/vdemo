@@ -1,0 +1,30 @@
+/*
+
+@font-face {
+    font-family: 'Lato', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Lato');
+  };  
+  @font-face {
+    font-family: 'Acme', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Acme');
+  }  
+  @font-face {
+    font-family: 'Ubuntu', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Ubuntu');
+  }  
+  @font-face {
+    font-family: 'Questrial', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Economica');
+  }  
+  @font-face {
+    font-family: 'Economica', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Economica');
+  }  
+  @font-face {
+    font-family: 'Raleway', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Raleway');
+  }
+ @font-face {
+    font-family: 'Open+Sans+Condensed:300', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+  }  

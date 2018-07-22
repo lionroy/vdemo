@@ -21,7 +21,7 @@ to { transform: rotate(360deg); }
 
 const Logo = styled.img`
   animation: ${spin} infinite 20s linear;
-  height: 80px;
+  height: 50px;
 `;
 
 const Header = styled.div`
@@ -30,17 +30,18 @@ const Header = styled.div`
   padding: 1erm;
   padding-bottom: 1em;
   color: white;
+  font-family: 'Roboto Condensed', serif;
 
   > h2 {
+    font-family: 'Roboto Slab', serif;
     ${props => props.theme.uppercase && "text-transform: uppercase"};
-    ${props => props.theme.fonts && "font-family: 'Playfair Display SC', serif"};
+    ${props => props.theme.font && "font-family: 'Roboto Slab', serif"};
     color: purple;
-    font-family: 'Playfair Display SC', serif;
   }
 `;
 const Title = styled.div`
   font-size: 1.5em;
-  font-family: 'Jura', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 
 `;
 const Main = styled.div`
@@ -50,9 +51,10 @@ const Main = styled.div`
   margin: 0.5rem 1rem
   width: 75%
   background: lightblue
-  color: darkblu
+  color: darkblue
   border: white
   border-top: 2px solid black
+  font-family: 'Roboto';
 `;
 const Capsule = styled.div`
   font-size: 1.2em;
@@ -69,9 +71,12 @@ const Capsule = styled.div`
 `;
 const Intro = styled.p`
   font-size: large;
+  font-family: 'Roboto Mono';
+
 `;
 const Label = styled.p`
   font-size: normal;
+  font-family: 'Lato';
 `;
 const Button = styled.button`
 display: inline-block
@@ -79,17 +84,16 @@ display: inline-block
   padding: 0.5rem 0
   margin: 0.5rem 1rem
   width: 11rem
-  background: #EDD2EF
+  background: #cornflowerblue
   color: purple
   border: 2px solid cornflowerblue  
   
   ${props =>
     props.primary &&
     css`
-  background: #EFE8D2
-  color: purple
-  border: 
-     2px solid gold  
+  background: purple
+  color: #EFE8D2 
+  border: 2px solid purple
 `}
   `;
 
@@ -116,15 +120,14 @@ class App extends Component {
   render() {
     return (
       <Outer>
-        <Header>
+        <Header uppercase>
           <Logo src={logo} alt="logo" />
           <Title>
-            <h2>Get Ready To React</h2>
+            <h2>Ready To React</h2>
           </Title>
         </Header>
         <Intro>
-          <FontAwesomeIcon icon="home" /> Contact Us This is a simple React
-          Page. Bottom UP. Here goes. Stay Tuned
+          <FontAwesomeIcon icon="home" /> VDemo | React Page. Bottom UP. Here goes. Stay tuned for more Jazz
         </Intro>
         <Capsule>
           <Button primary label="Login">
