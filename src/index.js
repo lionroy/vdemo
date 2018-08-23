@@ -10,8 +10,10 @@ injectGlobal`
     body {
         margin: 0;
         padding: 0;
-        font-family: "Lato", "Helvetica", "Thaoma", sans-serif;
-  }
+        font-family: "Roboto", "Lato", "Helvetica", "Thaoma", sans-serif;
+    a { text-decoration: none; color: black; }
+        
+    ul { list-style: none; }
 `
 
 ReactDOM.render(<App />, document.getElementById('root'))
