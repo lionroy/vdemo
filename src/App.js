@@ -23,14 +23,14 @@ library.add(faEnvelope, faKey, faHome, faAt, faArchway, faAtlas); //fa envelope
 const Home = () => (
   <Fragment>
     <h2>Our Projects</h2>
-    <Intro>Projects decriptions...</Intro>
+    <Intro>Projects descriptions...</Intro>
   </Fragment>
 );
 
 const About = () => (
   <Fragment>
     <h2>Our Company Brand</h2>
-    <Intro>Established in 1999, decriptions...</Intro>
+    <Intro>Established in 1999, descriptions...</Intro>
   </Fragment>
 );
 
@@ -46,13 +46,13 @@ const Topics = ({ match }) => (
     <h2>Examples</h2>
     <ul>
       <li>
-        <Link to={`${match.url}/rendering`}>Demo I: Rendering with React</Link>
+        <Link to={`${match.url}/full-stack`}>Fullstack and devops</Link>
       </li>
       <li>
-        <Link to={`${match.url}/components`}>Demo II: Components</Link>
+        <Link to={`${match.url}/components`}>Web components</Link>
       </li>
       <li>
-        <Link to={`${match.url}/props-v-state`}>Demo III: Props v. State</Link>
+        <Link to={`${match.url}/mindfulness`}>Mindfulness</Link>
       </li>
     </ul>
 
@@ -60,7 +60,7 @@ const Topics = ({ match }) => (
     <Route
       exact
       path={match.path}
-      render={() => <h3>This selected topic now renders</h3>}
+      render={() => <h3>This selected topic renders nicely</h3>}
     />
   </Fragment>
 );
@@ -126,14 +126,14 @@ const Logo = styled.img`
 `;
 
 const Header = styled.div`
-  diaplay: flex;
+  display: flex;
   flex: 1;
   text-align: left;
   background-color: #333;
   text-decoration: strong;
   height: 5erm;
   padding: 1em 2em 2em 1em;
-  color: lightgray;
+  color: #a7d;
   font-family: "Roboto", sans-serif;
 
   > h2 {
@@ -143,21 +143,7 @@ const Header = styled.div`
     ${props => props.theme.font && "font-family: 'Acme', sans-serif"};
   }
 `;
-const FooterContent = styled.div`
-  background-color: #444;
-  height: 350px;
-  padding: 1erm;
-  padding-bottom: 1em;
-  color: #ddd;
-  font-family: "Roboto", sans-serif;
 
-  > h2 {
-    color: purple;
-    font-family: "Roboto Slab", ans-serif;
-    ${props => props.theme.uppercase && "text-transform: uppercase"}
-    ${props => props.theme.font && "font-family: 'Roboto Slab', sans-serif"}
-  }
-`
 const Title = styled.div`
   font-size: 1.2em
   font-family: "Roboto Condensed", sans-serif
@@ -174,16 +160,7 @@ const MainContent = styled.section`
   border-bottom: 2px solid black
   font-family: 'Roboto'
 `;
-const UnEqualDivider = styled.div`
-  display: flex;
-  margin: 0.2rem;
-  padding: 1rem;
-  background: #999;
-  ${props => props.horizontal && "flex-direction: row;"} > * {
-    flex: 1;
 
-  }
-`;
 const Lpanel = styled.div`
   border-bottom: 5px solid green;
   display: flex
@@ -232,9 +209,9 @@ const Button = styled.button`
   padding: 0.5rem
   margin: 0.5rem
   width: 11rem
-  background: #cornflowerblue
+  background: "cornflowerblue"
   color: purple
-  border: 2px solid cornflowerblue  
+  border: 2px solid "cornflowerblue  "
   
   ${props =>
     props.primary &&
@@ -251,7 +228,21 @@ const Button = styled.button`
   border: 2px solid orangered
 `}
   `;
-
+  const FooterContent = styled.div`
+  background-color: darkgray;
+  height: 150px;
+  padding: 1erm;
+  padding-bottom: 1em;
+  color: #ddd;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  > h2 {
+    color: purple;
+    font-family: "Roboto Slab", ans-serif;
+    ${props => props.theme.uppercase && "text-transform: uppercase"}
+    ${props => props.theme.font && "font-family: 'Roboto Slab', sans-serif"}
+  }
+`
 const EqualDivider = styled.div`
   display: flex;
   margin: 0.2rem;
@@ -267,12 +258,26 @@ const EqualDivider = styled.div`
 `;
 const InnerDivider = styled.div`
   display: flex;
-  width: 200px;
+  max-width: 200px;
   border: 1px solid green;
 `;
+const UnEqualDivider = styled.div`
+  display: flex;
+  margin: 0.2rem;
+  padding: 1rem;
+  background: #999;
+  ${props => props.horizontal && "flex-direction: row;"} > * {
+    flex: 1;
 
+    &:(first-child) {
+      ${props => (props.vertical ? "margin-top" : "margin-left")}: 1rem;
+    }
+
+  }
+`;
 const Child = styled.div`
   background: #aaa;
+  border-left: 3px solid yellow;
 `;
 
 
@@ -307,7 +312,7 @@ const SidebarExample = () => (
       <div
         style={{
           padding: "10px",
-          width: "40%",
+          width: "stretch",
           background: "#f0f0f0"
         }}
       >
@@ -391,12 +396,14 @@ class App extends Component {
             <Child>
               <EqualDivider>
                 <Child>
+                Basic textual
                   <Label>Label</Label>
                   <Label>Label</Label>
                   <Label>Label</Label>
                   <Label>Label</Label>
                 </Child>
                 <Child>
+                Basic Buttons
                   <Button>Button</Button>
                   <Button primary>Primary</Button>
                   <Button alert>Alert</Button>
@@ -408,7 +415,7 @@ class App extends Component {
               </EqualDivider>
             </Child>
             <Child>
-              Second
+              Trivial Gui combination
               <EqualDivider>
                 <Child>First</Child>
                 <Child>Second</Child>
